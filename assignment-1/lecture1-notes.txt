@@ -1,0 +1,35 @@
+current state: s
+actions: a1, a2, a3
+rewards: r1, r2, r3
+
+1) value function?
+v(s) = E [r1 + gamma*r2 + gamma^2*r3 | S(t) = s] 
+
+v(sn) = v(sn-1)  v(sn-2) + ... + v(s0)
+
+\pi(a|s), (a11, a12, a13, .., a1n)
+
+s -> s' (expected goal state)
+  \
+  ---> s'' (unexpected state)
+  
+(s,a)-->(s', s'', ...) = p(s'|s,a)
+
+s0->sn: pi(a1|s0)*p(s1|s0,a1)* pi(a2|s1) * p(s2|s1,a2) * ... * pi(an+1 | sn)
+v(s) = r1+r2+..+rn
+s0'->sn: cost 2*n steps 
+v(s) = r'1+r'2+..+r'(2n)
+
+1,2,3, (0.1, 0.5, 0.4) = number
+
+Game Play example:
+
+- Defensive Mode:
+shield, missile, gun
+0.8,    0.1,     0.1
+
+- Attack Mode:
+shied, missile, gun
+0.1,   0.5,     0.4
+
+pi(a|s) <- policy function:  state: mode agent is in, action: 3 options of attack/defense
